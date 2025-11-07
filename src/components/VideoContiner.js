@@ -15,12 +15,11 @@ const VideoContiner = () => {
     await setVideos(json.items);
   };
 
-  if(videos.length === 0) return <div>Loading...</div>;
+  if (videos.length === 0) return <div>Loading...</div>;
 
   return (
     <div className="flex flex-wrap">
-    
-      {videos.map(video => (
+      {videos.map((video) => (
         <Link to={"/Watch?v=" + video.id} key={video.id}>
           <VideoCard info={video} />
         </Link>
